@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/productsans</item>
+        <item name="android:buttonCornerRadius">5pt</item>
+        <item name="android:buttonTint">@color/colorBlue</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+    </style>
+    <style name="AppTheme.viewContact" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/productsans</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+
+    </style>
+    <style name="AppTheme.actionButtons" parent="AppTheme.viewContact">
+        <item name="android:drawableTint">@color/colorBlue</item>
+        <item name="android:textColor">@color/colorBlue</item>
+    </style>
+
+    <style name="AppTheme.contactInfoTextViews" parent="AppTheme.viewContact">
+        <item name="android:layout_marginTop">@dimen/margin_small</item>
+        <item name="android:layout_marginStart">@dimen/margin_medium</item>
+        <item name="android:textColor">@color/colorDarkGray</item>
+    </style>
+</resources>
