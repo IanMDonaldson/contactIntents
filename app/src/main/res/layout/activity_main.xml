@@ -5,123 +5,250 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="404dp"
-        android:layout_height="73dp"
-        app:layout_constraintEnd_toEndOf="parent"
+    <LinearLayout
+        android:id="@+id/fnameLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/textInputLayoutHeight"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topGuideline">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/personImageView"
+            android:layout_width="@dimen/spacing_xxlarge"
+            android:layout_height="@dimen/textInputLayoutHeight"
+            android:paddingHorizontal="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_medium"
+            android:src="@drawable/ic_person_outline_black_24dp"
+            android:tint="@color/colorDarkGray"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/firstNameInputLayout"
+        style="@style/AppTheme"
+        android:layout_width="350dp"
+        android:layout_height="74dp"
+       >
 
         <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
+            android:id="@+id/firstName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="@string/first_name_hint" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lastNameLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/textInputLayoutHeight"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fnameLinearLayout">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/spacing_xxlarge"
+            android:layout_height="@dimen/textInputLayoutHeight"
+            android:src="@drawable/ic_invisible_person_outline_24dp"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lastNameInputLayout"
+        style="@style/AppTheme"
+        android:layout_width="353dp"
+        android:layout_height="78dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iconGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/firstNameInputLayout">
 
         <EditText
-            android:id="@+id/editText2"
-            android:layout_width="wrap_content"
+            android:id="@+id/lastName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="@string/last_name_hint" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/phoneLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/textInputLayoutHeight"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lastNameLinearLayout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/spacing_xxlarge"
+            android:layout_height="@dimen/textInputLayoutHeight"
+            android:padding="@dimen/spacing_middle"
+            android:paddingHorizontal="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_medium"
+            android:src="@drawable/ic_phone_black_24dp"
+            android:tint="@color/colorDarkGray"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneInputLayout"
+            style="@style/AppTheme"
+            android:layout_width="352dp"
+            android:layout_height="76dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/iconGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/lastNameInputLayout">
+
+            <EditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="phone"
+                android:text="@string/phone_hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/emailLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/textInputLayoutHeight"
+    android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
-
-        <EditText
-            android:id="@+id/editText3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="phone" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout5"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneLinearLayout">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/spacing_xxlarge"
+            android:layout_height="@dimen/textInputLayoutHeight"
+            android:paddingHorizontal="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_medium"
+            android:src="@drawable/ic_email_black_24dp"
+            android:tint="@color/colorDarkGray"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailInputLayout"
+            style="@style/AppTheme"
+            android:layout_width="350dp"
+            android:layout_height="72dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/iconGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/phoneInputLayout">
+
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:text="@string/email_hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/locationLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/textInputLayoutHeight"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
-
-        <EditText
-            android:id="@+id/editText4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textEmailAddress" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout6"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailLinearLayout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/spacing_xxlarge"
+            android:layout_height="@dimen/textInputLayoutHeight"
+            android:paddingHorizontal="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_medium"
+            android:src="@drawable/ic_location_on_black_24dp"
+            android:tint="@color/colorDarkGray"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/locationInputLayout"
+            style="@style/AppTheme"
+            android:layout_width="331dp"
+            android:layout_height="68dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/iconGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/emailInputLayout">
+
+            <EditText
+                android:id="@+id/locationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPostalAddress"
+                android:text="@string/address_hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/websiteLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/textInputLayoutHeight"
+    android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/locationLinearLayout">
 
-        <EditText
-            android:id="@+id/editText5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPostalAddress" />
-    </com.google.android.material.textfield.TextInputLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/spacing_xxlarge"
+            android:layout_height="@dimen/textInputLayoutHeight"
+            android:paddingHorizontal="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_medium"
+            android:src="@drawable/ic_public_black_24dp"
+            android:tint="@color/colorDarkGray"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/websiteInputLayout"
+            style="@style/AppTheme"
+            android:layout_width="409dp"
+            android:layout_height="@dimen/textInputLayoutHeight"
+            app:layout_constraintStart_toStartOf="@+id/iconGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/locationInputLayout">
 
-        <EditText
-            android:id="@+id/editText6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:id="@+id/websiteEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/website_hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
+        android:id="@+id/topGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="139dp" />
+        app:layout_constraintGuide_begin="78dp" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="324dp"
-        android:layout_height="53dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="620dp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveContactButton"
+        android:backgroundTint="@color/colorBlue"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="330dp"
+        android:layout_height="59dp"
+        android:layout_marginHorizontal="@dimen/margin_mlarge"
+        android:layout_marginVertical="@dimen/margin_mlarge"
+        android:text="@string/save_button_label"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/websiteLinearLayout" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

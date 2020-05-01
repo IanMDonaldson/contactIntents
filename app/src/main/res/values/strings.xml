@@ -12,4 +12,5 @@
     <string name="email_button_label">Email</string>
     <string name="directions_button_label">Map</string>
     <string name="web_button_label">Web</string>
+    <string name="edit_contact_title">Edit Contact</string>
 </resources>
