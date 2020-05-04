@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:theme="@style/AppTheme.viewContact"
     android:orientation="vertical">
     <LinearLayout
@@ -71,6 +72,225 @@
             android:layout_height="match_parent"
             />
         <!--literally copy textviews from main activity-->
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/fnameLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/textViewHeight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topGuideline">
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/personImageView"
+                android:layout_width="@dimen/spacing_xxlarge"
+                android:layout_height="@dimen/textViewHeight"
+                android:paddingHorizontal="@dimen/margin_small"
+                android:paddingTop="@dimen/margin_medium"
+                android:src="@drawable/ic_person_outline_black_24dp"
+                android:tint="@color/colorDarkGray"/>
+            <com.google.android.material.textview.MaterialTextView
+
+                android:id="@+id/firstNametextView"
+                style="@style/AppTheme"
+                android:layout_width="350dp"
+                android:layout_height="74dp"
+                >
+
+                <EditText
+                    android:id="@+id/firstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="@string/first_name_hint" />
+            </com.google.android.material.textview.MaterialTextView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/lastNameLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/textViewHeight"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fnameLinearLayout">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/spacing_xxlarge"
+                android:layout_height="@dimen/textViewHeight"
+                android:src="@drawable/ic_invisible_person_outline_24dp"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/lastNametextView"
+                style="@style/AppTheme"
+                android:layout_width="353dp"
+                android:layout_height="78dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/iconGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/firstNametextView">
+
+                <EditText
+                    android:id="@+id/lastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="@string/last_name_hint" />
+            </com.google.android.material.textview.MaterialTextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/phoneLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/textViewHeight"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lastNameLinearLayout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/spacing_xxlarge"
+                android:layout_height="@dimen/textViewHeight"
+                android:padding="@dimen/spacing_middle"
+                android:paddingHorizontal="@dimen/margin_small"
+                android:paddingTop="@dimen/margin_medium"
+                android:src="@drawable/ic_phone_black_24dp"
+                android:tint="@color/colorDarkGray"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/phonetextView"
+                style="@style/AppTheme"
+                android:layout_width="352dp"
+                android:layout_height="76dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/iconGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/lastNametextView">
+
+                <EditText
+                    android:id="@+id/phoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="phone"
+                    android:text="@string/phone_hint" />
+            </com.google.android.material.textview.MaterialTextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/emailLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/textViewHeight"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phoneLinearLayout">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/spacing_xxlarge"
+                android:layout_height="@dimen/textViewHeight"
+                android:paddingHorizontal="@dimen/margin_small"
+                android:paddingTop="@dimen/margin_medium"
+                android:src="@drawable/ic_email_black_24dp"
+                android:tint="@color/colorDarkGray"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/emailtextView"
+                style="@style/AppTheme"
+                android:layout_width="350dp"
+                android:layout_height="72dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/iconGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/phonetextView">
+
+                <EditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:text="@string/email_hint" />
+            </com.google.android.material.textview.MaterialTextView>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/locationLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/textViewHeight"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailLinearLayout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/spacing_xxlarge"
+                android:layout_height="@dimen/textViewHeight"
+                android:paddingHorizontal="@dimen/margin_small"
+                android:paddingTop="@dimen/margin_medium"
+                android:src="@drawable/ic_location_on_black_24dp"
+                android:tint="@color/colorDarkGray"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/locationtextView"
+                style="@style/AppTheme"
+                android:layout_width="331dp"
+                android:layout_height="68dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/iconGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/emailtextView">
+
+                <EditText
+                    android:id="@+id/locationEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPostalAddress"
+                    android:text="@string/address_hint" />
+            </com.google.android.material.textview.MaterialTextView>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/websiteLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/textViewHeight"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/locationLinearLayout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/spacing_xxlarge"
+                android:layout_height="@dimen/textViewHeight"
+                android:paddingHorizontal="@dimen/margin_small"
+                android:paddingTop="@dimen/margin_medium"
+                android:src="@drawable/ic_public_black_24dp"
+                android:tint="@color/colorDarkGray"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/websitetextView"
+                style="@style/AppTheme"
+                android:layout_width="409dp"
+                android:layout_height="@dimen/textViewHeight"
+                app:layout_constraintStart_toStartOf="@+id/iconGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/locationtextView">
+
+                <EditText
+                    android:id="@+id/websiteEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="@string/website_hint" />
+            </com.google.android.material.textview.MaterialTextView>
+        </LinearLayout>
+    </LinearLayout>
 </ScrollView>

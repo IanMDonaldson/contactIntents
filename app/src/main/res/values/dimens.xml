@@ -26,6 +26,7 @@
     <dimen name="textsizeSmall">12pt</dimen>
     <!--gui component heights and widths-->
     <dimen name="textInputLayoutHeight">72dp</dimen>
+    <dimen name="textViewHeight">72dp</dimen>
     <dimen name="saveContactButtonHeight">70dp</dimen>
     <dimen name="saveContactButtonWidth">325dp</dimen>
 </resources>

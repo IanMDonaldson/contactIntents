@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <LinearLayout
-        android:id="@+id/fnameLinearLayout"
+        android:id="@+id/firstNameLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/textInputLayoutHeight"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
        >
 
         <EditText
-            android:id="@+id/firstName"
+            android:id="@+id/firstNameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -45,7 +45,7 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fnameLinearLayout">
+        app:layout_constraintTop_toBottomOf="@id/firstNameLinearLayout">
 
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -63,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/firstNameInputLayout">
 
         <EditText
-            android:id="@+id/lastName"
+            android:id="@+id/lastNameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -100,7 +100,7 @@
             app:layout_constraintTop_toBottomOf="@+id/lastNameInputLayout">
 
             <EditText
-                android:id="@+id/phoneNumber"
+                android:id="@+id/phoneNumberEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
