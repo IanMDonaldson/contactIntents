@@ -75,7 +75,7 @@ public class Person implements Parcelable {
         parcel.writeString(this.location);
         parcel.writeString(this.website);
     }
-    public static final Creator<Person> CREATOR = new Creator<Person>() {
+    public static final Parcelable.Creator<Person> CREATOR = new Parcelable.Creator<Person>() {
         @Override
         public Person createFromParcel(Parcel source) {
             return new Person(source);

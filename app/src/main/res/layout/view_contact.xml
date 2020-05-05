@@ -9,71 +9,83 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_person_outline_black_24dp"
+            android:layout_height="193dp"
+            android:background="@color/colorPrimaryDark"
             android:backgroundTint="@color/colorPrimaryDark"
             android:drawableTint="@color/colorDarkGray"
-            />
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/textsizeLarge"
+            android:src="@drawable/ic_person_outline_black_24dp"
 
             />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/fullNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/textsizeLarge" />
         <HorizontalScrollView
             android:id="@+id/actionButtons"
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/callActionButton"
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_height="match_parent"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/AppTheme.actionButtons"
-                android:drawableTop="@drawable/ic_phone_black_24dp"
-                android:text="@string/call_button_label"
-                />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/messageActionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/AppTheme.actionButtons"
-                android:drawableTop="@drawable/ic_message_black_24dp"
-                android:text="@string/text_button_label"
-                />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/emailActionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/AppTheme.actionButtons"
-                android:drawableTop="@drawable/ic_email_black_24dp"
-                android:text="@string/email_button_label"
-                />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/directionsActionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/AppTheme.actionButtons"
-                android:drawableTop="@drawable/ic_directions_black_24dp"
-                android:text="@string/directions_button_label"
-                />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/websiteActionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/AppTheme.actionButtons"
-                android:drawableTop="@drawable/ic_public_black_24dp"
-                android:text="@string/web_button_label"
-                />
+                android:id="@+id/buttonScrollLinearLayout">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/callActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/AppTheme.actionButtons"
+                    android:drawableTop="@drawable/ic_phone_black_24dp"
+                    android:text="@string/call_button_label"
+                    android:onClick="callContact" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/messageActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/AppTheme.actionButtons"
+                    android:drawableTop="@drawable/ic_message_black_24dp"
+                    android:text="@string/text_button_label"
+                    android:onClick="messageContact" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/emailActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/AppTheme.actionButtons"
+                    android:drawableTop="@drawable/ic_email_black_24dp"
+                    android:text="@string/email_button_label"
+                    android:onClick="emailContact" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/directionsActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/AppTheme.actionButtons"
+                    android:drawableTop="@drawable/ic_directions_black_24dp"
+                    android:text="@string/directions_button_label"
+                    android:onClick="getDirectionsToContact" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/websiteActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/AppTheme.actionButtons"
+                    android:drawableTop="@drawable/ic_public_black_24dp"
+                    android:text="@string/web_button_label"
+                    android:onClick="openContactWebsite" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
         </HorizontalScrollView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+
         <!--literally copy textviews from main activity-->
         <LinearLayout
-            android:id="@+id/fnameLinearLayout"
+            android:id="@+id/firstNameLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/textViewHeight"
             app:layout_constraintStart_toStartOf="parent"
@@ -88,22 +100,17 @@
                 android:paddingTop="@dimen/margin_medium"
                 android:src="@drawable/ic_person_outline_black_24dp"
                 android:tint="@color/colorDarkGray"/>
+
             <com.google.android.material.textview.MaterialTextView
 
-                android:id="@+id/firstNametextView"
+                android:id="@+id/firstNameTextView"
                 style="@style/AppTheme"
                 android:layout_width="350dp"
                 android:layout_height="74dp"
+                android:gravity="center_vertical"
                 >
 
-                <EditText
-                    android:id="@+id/firstName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="@string/first_name_hint" />
+
             </com.google.android.material.textview.MaterialTextView>
         </LinearLayout>
         <LinearLayout
@@ -113,7 +120,7 @@
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fnameLinearLayout">
+            app:layout_constraintTop_toBottomOf="@id/firstNameLinearLayout">
 
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -121,23 +128,18 @@
                 android:layout_height="@dimen/textViewHeight"
                 android:src="@drawable/ic_invisible_person_outline_24dp"
                 />
+
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/lastNametextView"
+                android:id="@+id/lastNameTextView"
                 style="@style/AppTheme"
                 android:layout_width="353dp"
                 android:layout_height="78dp"
+                android:gravity="center_vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/iconGuideline"
-                app:layout_constraintTop_toBottomOf="@+id/firstNametextView">
+                app:layout_constraintTop_toBottomOf="@+id/firstNameTextView">
 
-                <EditText
-                    android:id="@+id/lastName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="@string/last_name_hint" />
+
             </com.google.android.material.textview.MaterialTextView>
 
         </LinearLayout>
@@ -158,23 +160,18 @@
                 android:paddingTop="@dimen/margin_medium"
                 android:src="@drawable/ic_phone_black_24dp"
                 android:tint="@color/colorDarkGray"/>
+
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/phonetextView"
+                android:id="@+id/phoneTextView"
                 style="@style/AppTheme"
                 android:layout_width="352dp"
                 android:layout_height="76dp"
+                android:gravity="center_vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/iconGuideline"
-                app:layout_constraintTop_toBottomOf="@+id/lastNametextView">
+                app:layout_constraintTop_toBottomOf="@+id/lastNameTextView">
 
-                <EditText
-                    android:id="@+id/phoneNumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="phone"
-                    android:text="@string/phone_hint" />
+
             </com.google.android.material.textview.MaterialTextView>
         </LinearLayout>
 
@@ -195,23 +192,19 @@
                 android:paddingTop="@dimen/margin_medium"
                 android:src="@drawable/ic_email_black_24dp"
                 android:tint="@color/colorDarkGray"/>
+
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/emailtextView"
+                android:id="@+id/emailTextView"
                 style="@style/AppTheme"
                 android:layout_width="350dp"
                 android:layout_height="72dp"
+                android:gravity="center_vertical"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/iconGuideline"
-                app:layout_constraintTop_toBottomOf="@+id/phonetextView">
+                app:layout_constraintTop_toBottomOf="@+id/phoneTextView">
 
-                <EditText
-                    android:id="@+id/emailEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textEmailAddress"
-                    android:text="@string/email_hint" />
+
             </com.google.android.material.textview.MaterialTextView>
 
         </LinearLayout>
@@ -234,23 +227,18 @@
                 android:paddingTop="@dimen/margin_medium"
                 android:src="@drawable/ic_location_on_black_24dp"
                 android:tint="@color/colorDarkGray"/>
+
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/locationtextView"
+                android:id="@+id/locationTextView"
                 style="@style/AppTheme"
-                android:layout_width="331dp"
+                android:layout_width="359dp"
                 android:layout_height="68dp"
+                android:textAlignment="viewStart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/iconGuideline"
-                app:layout_constraintTop_toBottomOf="@+id/emailtextView">
+                app:layout_constraintTop_toBottomOf="@+id/emailTextView">
 
-                <EditText
-                    android:id="@+id/locationEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textPostalAddress"
-                    android:text="@string/address_hint" />
+
             </com.google.android.material.textview.MaterialTextView>
 
 
@@ -275,21 +263,14 @@
                 android:tint="@color/colorDarkGray"/>
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/websitetextView"
+                android:id="@+id/websiteTextView"
                 style="@style/AppTheme"
-                android:layout_width="409dp"
-                android:layout_height="@dimen/textViewHeight"
+                android:layout_width="422dp"
+                android:layout_height="774dp"
+                android:gravity="center_vertical"
                 app:layout_constraintStart_toStartOf="@+id/iconGuideline"
-                app:layout_constraintTop_toBottomOf="@+id/locationtextView">
+                app:layout_constraintTop_toBottomOf="@+id/locationTextView">
 
-                <EditText
-                    android:id="@+id/websiteEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="@string/website_hint" />
             </com.google.android.material.textview.MaterialTextView>
         </LinearLayout>
     </LinearLayout>

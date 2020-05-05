@@ -12,7 +12,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/edit_contact_title">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
 
         <activity
         android:name=".ViewContact"
-        android:label="@string/edit_contact_title">
+        >
 
     </activity>
     </application>

@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:visibility="visible">
+
     <LinearLayout
         android:id="@+id/firstNameLinearLayout"
         android:layout_width="match_parent"
@@ -28,14 +30,14 @@
         android:layout_height="74dp"
        >
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/firstNameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/first_name_hint" />
+            android:hint="@string/first_name_hint"/>
     </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
     <LinearLayout
@@ -62,14 +64,14 @@
         app:layout_constraintStart_toStartOf="@+id/iconGuideline"
         app:layout_constraintTop_toBottomOf="@+id/firstNameInputLayout">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/lastNameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/last_name_hint" />
+            android:hint="@string/last_name_hint" />
     </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
@@ -99,14 +101,14 @@
             app:layout_constraintStart_toStartOf="@+id/iconGuideline"
             app:layout_constraintTop_toBottomOf="@+id/lastNameInputLayout">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/phoneNumberEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="phone"
-                android:text="@string/phone_hint" />
+                android:hint="@string/phone_hint" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
@@ -136,14 +138,14 @@
             app:layout_constraintStart_toStartOf="@+id/iconGuideline"
             app:layout_constraintTop_toBottomOf="@+id/phoneInputLayout">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textEmailAddress"
-                android:text="@string/email_hint" />
+                android:hint="@string/email_hint" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
@@ -175,14 +177,14 @@
             app:layout_constraintStart_toStartOf="@+id/iconGuideline"
             app:layout_constraintTop_toBottomOf="@+id/emailInputLayout">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/locationEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPostalAddress"
-                android:text="@string/address_hint" />
+                android:hint="@string/address_hint" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -214,14 +216,14 @@
             app:layout_constraintStart_toStartOf="@+id/iconGuideline"
             app:layout_constraintTop_toBottomOf="@+id/locationInputLayout">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/websiteEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="@string/website_hint" />
+                android:hint="@string/website_hint" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
@@ -244,6 +246,7 @@
         android:layout_marginVertical="@dimen/margin_mlarge"
         android:text="@string/save_button_label"
         android:textAllCaps="true"
+        android:onClick="onButtonClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 public class MainActivity extends AppCompatActivity {
     /*public static final String EXTRA_FIRST_NAME = "defaultFirstName";
     public static final String EXTRA_LAST_NAME = "defaultLastName";
@@ -27,12 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void onButtonClicked(View view) {
-        EditText firstNameEditText = findViewById(R.id.firstNameEditText);
-        EditText lastNameEditText = findViewById(R.id.lastNameEditText);
-        EditText phoneNumberEditText = findViewById(R.id.phoneNumberEditText);
-        EditText emailEditText = findViewById(R.id.emailEditText);
-        EditText locationEditText = findViewById(R.id.phoneNumberEditText);
-        EditText websiteEditText = findViewById(R.id.websiteEditText);
+
+        TextInputEditText firstNameEditText = findViewById(R.id.firstNameEditText);
+        TextInputEditText lastNameEditText = findViewById(R.id.lastNameEditText);
+        TextInputEditText phoneNumberEditText = findViewById(R.id.phoneNumberEditText);
+        TextInputEditText emailEditText = findViewById(R.id.emailEditText);
+        TextInputEditText locationEditText = findViewById(R.id.locationEditText);
+        TextInputEditText websiteEditText = findViewById(R.id.websiteEditText);
         Person person = new Person(firstNameEditText,
                 lastNameEditText,
                 phoneNumberEditText,
